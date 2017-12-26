@@ -5,18 +5,19 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 
 
 @JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
 @Entity
 public class Todo {
-    @Id
+    
+	@Id
     private String id;
     
-    @NotBlank
+    @NotNull
     @Size(max=100)
     private String title;
     
