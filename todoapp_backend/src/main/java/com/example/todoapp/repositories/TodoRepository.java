@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.example.todoapp.models.Todo;
 
 @Transactional
-public interface TodoRepository extends CrudRepository<Todo, String>  {
+public interface TodoRepository extends CrudRepository<Todo, Integer>  {
 
 }

@@ -3,6 +3,8 @@ package com.example.todoapp.models;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Id;
@@ -15,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class Todo {
     
 	@Id
-    private String id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     
     @NotNull
     @Size(max=100)
@@ -33,11 +36,11 @@ public class Todo {
         this.title = title;
     }
     
-    public String getId() {
+    public int getId() {
         return id;
     }
     
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
     
